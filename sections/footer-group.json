@@ -14,11 +14,10 @@
     "footer": {
       "type": "footer",
       "blocks": {
-        "text_z3pWDX": {
-          "type": "text",
+        "brand_information_WyDzB6": {
+          "type": "brand_information",
           "settings": {
-            "heading": "Email",
-            "subtext": "<p>realblockk@gmail.com<br/>Seja real</p>"
+            "show_social": true
           }
         },
         "image_nBKiEk": {
@@ -35,33 +34,26 @@
             "heading": "Links rápidos",
             "menu": "footer"
           }
-        },
-        "brand_information_nG8VQy": {
-          "type": "brand_information",
-          "settings": {
-            "show_social": true
-          }
         }
       },
       "block_order": [
-        "text_z3pWDX",
+        "brand_information_WyDzB6",
         "image_nBKiEk",
-        "link_list_XYBeN6",
-        "brand_information_nG8VQy"
+        "link_list_XYBeN6"
       ],
       "settings": {
         "color_scheme": "scheme-3",
         "newsletter_enable": false,
         "newsletter_heading": "Subscribe to our emails",
         "enable_follow_on_shop": true,
-        "show_social": true,
+        "show_social": false,
         "enable_country_selector": true,
         "enable_language_selector": true,
         "payment_enable": true,
         "show_policy": true,
         "margin_top": 0,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 32,
+        "padding_bottom": 16
       }
     }
   },

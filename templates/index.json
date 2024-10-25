@@ -22,7 +22,7 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "NEW DROP FROM REALBLOCKKSTAR",
+            "heading": "NEW DROP FROM BLOCKO",
             "heading_size": "h0"
           }
         },
@@ -85,6 +85,46 @@
         "padding_bottom": 36
       }
     },
+    "collection_list_iXr74X": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_p4rnar": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "featured_collection_DrrFYm": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "featured_collection_yFq6n6": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_p4rnar",
+        "featured_collection_DrrFYm",
+        "featured_collection_yFq6n6"
+      ],
+      "settings": {
+        "title": "Coleções",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "image_banner_mGcx3m": {
       "type": "image-banner",
       "blocks": {
@@ -98,7 +138,7 @@
         "heading_TFyyDW": {
           "type": "heading",
           "settings": {
-            "heading": "NEW DROP FROM REALBLOCKKSTAR",
+            "heading": "NEW DROP FROM BLOCKO",
             "heading_size": "h0"
           }
         }
@@ -125,6 +165,7 @@
   "order": [
     "image_banner",
     "featured_collection",
+    "collection_list_iXr74X",
     "image_banner_mGcx3m"
   ]
 }

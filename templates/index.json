@@ -22,7 +22,7 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "New Drop from realblockkstar",
+            "heading": "NEW DROP FROM REALBLOCKKSTAR",
             "heading_size": "h0"
           }
         },
@@ -92,14 +92,14 @@
           "type": "text",
           "settings": {
             "text": "BLOCK ‘2024",
-            "text_style": "subtitle"
+            "text_style": "caption-with-letter-spacing"
           }
         },
         "heading_TFyyDW": {
           "type": "heading",
           "settings": {
             "heading": "NEW DROP FROM REALBLOCKKSTAR",
-            "heading_size": "hxl"
+            "heading_size": "h0"
           }
         }
       },

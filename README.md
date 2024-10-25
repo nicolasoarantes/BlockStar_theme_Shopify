@@ -1,1 +1,0 @@
-# BlockStar_theme_Shopify

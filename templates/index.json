@@ -1,21 +1,37 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "image_banner": {
       "type": "image-banner",
       "blocks": {
+        "text_BL4FMk": {
+          "type": "text",
+          "settings": {
+            "text": "<strong>BLOCKK ‘2024</strong>",
+            "text_style": "subtitle"
+          }
+        },
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Browse our latest products",
+            "heading": "NEW DROP FROM BLOCKO",
             "heading_size": "h0"
           }
         },
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop all",
+            "button_label_1": "COMPRAR",
             "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
+            "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
             "button_style_secondary_2": false
@@ -23,17 +39,19 @@
         }
       },
       "block_order": [
+        "text_BL4FMk",
         "heading",
         "button"
       ],
       "settings": {
+        "image": "shopify://shop_images/Sem_titulo.png",
         "image_overlay_opacity": 40,
         "image_height": "large",
         "desktop_content_position": "bottom-center",
         "show_text_box": false,
-        "image_behavior": "none",
         "desktop_content_alignment": "center",
         "color_scheme": "scheme-3",
+        "image_behavior": "none",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
         "show_text_below": false
@@ -42,34 +60,105 @@
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured products",
+        "title": "",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "full_width": false,
+        "collection": "frontpage",
+        "products_to_show": 9,
+        "columns_desktop": 3,
+        "full_width": true,
         "show_view_all": true,
-        "view_all_style": "solid",
+        "view_all_style": "outline",
         "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
+        "color_scheme": "scheme-1",
+        "image_ratio": "portrait",
         "image_shape": "default",
-        "show_secondary_image": true,
+        "show_secondary_image": false,
         "show_vendor": false,
         "show_rating": false,
         "quick_add": "none",
         "columns_mobile": "2",
+        "swipe_on_mobile": false,
         "padding_top": 44,
         "padding_bottom": 36
+      }
+    },
+    "collection_list_iXr74X": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_p4rnar": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "moletons"
+          }
+        },
+        "featured_collection_DrrFYm": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "moletons"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_p4rnar",
+        "featured_collection_DrrFYm"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_banner_mGcx3m": {
+      "type": "image-banner",
+      "blocks": {
+        "text_j8jDNz": {
+          "type": "text",
+          "settings": {
+            "text": "BLOCK ‘2024",
+            "text_style": "caption-with-letter-spacing"
+          }
+        },
+        "heading_TFyyDW": {
+          "type": "heading",
+          "settings": {
+            "heading": "NEW DROP FROM BLOCKO",
+            "heading_size": "h0"
+          }
+        }
+      },
+      "block_order": [
+        "text_j8jDNz",
+        "heading_TFyyDW"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/16.png",
+        "image_overlay_opacity": 20,
+        "image_height": "adapt",
+        "desktop_content_position": "bottom-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-3",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
       }
     }
   },
   "order": [
     "image_banner",
-    "featured_collection"
+    "featured_collection",
+    "collection_list_iXr74X",
+    "image_banner_mGcx3m"
   ]
 }

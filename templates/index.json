@@ -153,12 +153,22 @@
         "stack_images_on_mobile": true,
         "show_text_below": true
       }
+    },
+    "custom_liquid_CKcVn7": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<!-- snippets/collection-card-featured.liquid -->\n<div class=\"collection-card-featured\">\n   <img src=\"{{ collection.image.src | img_url: '720x720' }}\" alt=\"{{ collection.title }}\" class=\"collection-card-image\">\n   <div class=\"collection-info\">\n      <h3 class=\"collection-title\">{{ collection.title }}</h3>\n      <span class=\"collection-price\">{{ collection.price | money }}</span>\n   </div>\n</div>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
     "image_banner",
     "featured_collection",
     "collection_list_iXr74X",
-    "image_banner_mGcx3m"
+    "image_banner_mGcx3m",
+    "custom_liquid_CKcVn7"
   ]
 }

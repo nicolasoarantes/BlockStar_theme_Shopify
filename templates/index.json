@@ -23,7 +23,7 @@
           "type": "heading",
           "settings": {
             "heading": "NEW DROP FROM BLOCKO",
-            "heading_size": "h0"
+            "heading_size": "hxl"
           }
         },
         "button": {
@@ -61,7 +61,7 @@
       "type": "featured-collection",
       "custom_css": [
         ".full-unstyled-link {font-family: \"Nunito Sans\"; font-size: 21.3px;}",
-        ".price>* {font-family: \"Nunito Sans\"; font-size: 21.3px;}"
+        ".price > * {font-family: \"Nunito Sans\"; font-size: 21.3px;}"
       ],
       "settings": {
         "title": "",

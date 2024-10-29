@@ -14,6 +14,9 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  border-color: black;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
 }
 
 .card.card--horizontal {
@@ -90,7 +93,7 @@
 }
 
 .card-information {
-  text-align: var(--text-alignment);
+  text-align: end;
 }
 
 .card__media,
@@ -301,6 +304,7 @@
 }
 
 .card__heading {
+  align-content: center;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -424,6 +428,8 @@
 }
 
 .card--standard > .card__content .card__information {
+  display: flex;
+  justify-content: space-between;
   padding-left: 0;
   padding-right: 0;
 }
@@ -466,7 +472,7 @@
 }
 
 .card-information {
-  width: 100%;
+  width: 50%!important;
 }
 
 .card-information > * {

@@ -11,7 +11,7 @@
   "current": {
     "logo": "shopify://shop_images/LOGO_PNG_3.png",
     "logo_width": 90,
-    "type_header_font": "assistant_n4",
+    "type_header_font": "nunito_sans_n4",
     "heading_scale": 100,
     "type_body_font": "assistant_n4",
     "body_scale": 100,
@@ -47,11 +47,11 @@
     "card_text_alignment": "left",
     "card_color_scheme": "scheme-2",
     "card_border_thickness": 0,
-    "card_border_opacity": 10,
+    "card_border_opacity": 5,
     "card_corner_radius": 0,
     "card_shadow_opacity": 0,
     "card_shadow_horizontal_offset": 0,
-    "card_shadow_vertical_offset": 4,
+    "card_shadow_vertical_offset": -40,
     "card_shadow_blur": 5,
     "collection_card_style": "standard",
     "collection_card_image_padding": 0,
@@ -111,7 +111,7 @@
     "brand_image_width": 100,
     "social_facebook_link": "",
     "social_instagram_link": "https://www.instagram.com/realblockkstar/",
-    "social_youtube_link": "realblockk@gmail.com",
+    "social_youtube_link": "https://www.youtube.com/@BLOCKKSTAR",
     "social_tiktok_link": "",
     "social_twitter_link": "",
     "social_snapchat_link": "",
@@ -147,7 +147,7 @@
     "color_schemes": {
       "scheme-1": {
         "settings": {
-          "background": "#ffffff",
+          "background": "#fafafa",
           "background_gradient": "",
           "text": "#121212",
           "button": "#121212",
@@ -158,7 +158,7 @@
       },
       "scheme-2": {
         "settings": {
-          "background": "#f3f3f3",
+          "background": "#ffffff",
           "background_gradient": "",
           "text": "#121212",
           "button": "#121212",

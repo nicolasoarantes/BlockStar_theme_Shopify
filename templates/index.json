@@ -73,7 +73,7 @@
         "view_all_style": "outline",
         "enable_desktop_slider": false,
         "color_scheme": "scheme-1",
-        "image_ratio": "portrait",
+        "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": false,
         "show_vendor": false,
@@ -91,13 +91,13 @@
         "featured_collection_p4rnar": {
           "type": "featured_collection",
           "settings": {
-            "collection": "moletons"
+            "collection": "moletom"
           }
         },
         "featured_collection_DrrFYm": {
           "type": "featured_collection",
           "settings": {
-            "collection": "moletons"
+            "collection": "calcas"
           }
         }
       },

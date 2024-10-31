@@ -1,7 +1,19 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{{ 'template-collection.css' | asset_url | stylesheet_tag }}
+
 {% schema %}
 {
-  "name": "Collection Cards Section",
-  "settings": [],
+  "name": "Collection Cards",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Featured Collections"
+    }
+  ],
   "blocks": [
     {
       "type": "collection_card",
@@ -11,11 +23,6 @@
           "type": "collection",
           "id": "collection",
           "label": "Collection"
-        },
-        {
-          "type": "image_picker",
-          "id": "background_image",
-          "label": "Background Image"
         },
         {
           "type": "text",
@@ -40,14 +47,23 @@
 }
 {% endschema %}
 
-<section class="collection-cards-section">
+<div class="section-collection-cards padding-section">
   <div class="container">
-    <div class="collection-cards-wrapper">
+    <h2 class="section-title">{{ section.settings.title }}</h2>
+    <div class="collection-cards-wrapper grid--2-col-tablet-down">
       {% for block in section.blocks %}
         {% assign collection = collections[block.settings.collection] %}
         {% if collection %}
-          <div class="collection-card" style="background-image: url('{{ block.settings.background_image | image_url: 'master' }}');">
+          <div class="collection-card">
             <a href="{{ collection.url }}" class="collection-link">
+              {% render 'card-product',
+                card_product: collection,
+                show_vendor: false,
+                media_aspect_ratio: 'portrait',
+                image_shape: 'default',
+                show_secondary_image: false,
+                section_id: section.id
+              %}
               <div class="collection-overlay">
                 <div class="collection-info">
                   <h2 class="collection-title">{{ collection.title }}</h2>
@@ -60,11 +76,12 @@
       {% endfor %}
     </div>
   </div>
-</section>
+</div>
 
 <style>
-.collection-cards-section {
-  padding: 0;
+.section-collection-cards {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .container {
@@ -79,9 +96,7 @@
 .collection-card {
   position: relative;
   width: 50%;
-  background-size: cover;
-  background-position: center;
-  min-height: 400px; /* Define uma altura fixa para garantir espaço */
+  min-height: 300px;
 }
 
 .collection-link {

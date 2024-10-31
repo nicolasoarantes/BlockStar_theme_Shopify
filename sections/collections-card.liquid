@@ -39,9 +39,8 @@
   {% for block in section.blocks %}
     {% assign collection = collections[block.settings.collection] %}
     {% if collection %}
-      <div class="collection-card">
+      <div class="collection-card" style="background-image: url('{{ collection.image | image_url: 'master' }}');">
         <a href="{{ collection.url }}" class="collection-link">
-          <img src="{{ collection.image | image_url: 'master' }}" alt="{{ collection.title }}" class="collection-image" width="{{ collection.image.width }}" height="{{ collection.image.height }}" />
           <div class="collection-overlay">
             <div class="collection-info">
               <h2 class="collection-title">{{ collection.title }}</h2>
@@ -63,17 +62,15 @@
 .collection-card {
   position: relative;
   width: 50%;
+  background-size: cover;
+  background-position: center;
 }
 
 .collection-link {
   display: block;
   position: relative;
-}
-
-.collection-image {
-  display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .collection-overlay {
@@ -84,19 +81,16 @@
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
   display: flex;
-  justify-content: space-between;
   align-items: flex-end;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.collection-link:hover .collection-overlay {
-  opacity: 1;
+  padding: 15px;
+  color: #ffffff;
 }
 
 .collection-info {
-  padding: 15px;
-  color: #ffffff;
+  display: flex;
+  width: 100%;
+  justify-content: space-between; /* Alinha título e botão em lados opostos */
+  align-items: center;
 }
 
 .collection-title {

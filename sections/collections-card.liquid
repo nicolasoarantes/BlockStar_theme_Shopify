@@ -1,6 +1,6 @@
 {% schema %}
 {
-  "name": "Collection Cards",
+  "name": "Collection Cards Section",
   "settings": [],
   "blocks": [
     {
@@ -40,26 +40,38 @@
 }
 {% endschema %}
 
-<div class="collection-cards-section">
-  {% for block in section.blocks %}
-    {% assign collection = collections[block.settings.collection] %}
-    {% if collection %}
-      <div class="collection-card" style="background-image: url('{{ block.settings.background_image | image_url: 'master' }}');">
-        <a href="{{ collection.url }}" class="collection-link">
-          <div class="collection-overlay">
-            <div class="collection-info">
-              <h2 class="collection-title">{{ collection.title }}</h2>
-              <button class="collection-button">{{ block.settings.button_text }}</button>
-            </div>
+<section class="collection-cards-section">
+  <div class="container">
+    <div class="collection-cards-wrapper">
+      {% for block in section.blocks %}
+        {% assign collection = collections[block.settings.collection] %}
+        {% if collection %}
+          <div class="collection-card" style="background-image: url('{{ block.settings.background_image | image_url: 'master' }}');">
+            <a href="{{ collection.url }}" class="collection-link">
+              <div class="collection-overlay">
+                <div class="collection-info">
+                  <h2 class="collection-title">{{ collection.title }}</h2>
+                  <button class="collection-button">{{ block.settings.button_text }}</button>
+                </div>
+              </div>
+            </a>
           </div>
-        </a>
-      </div>
-    {% endif %}
-  {% endfor %}
-</div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
 
 <style>
 .collection-cards-section {
+  padding: 0; /* Remove padding for full-width appearance */
+}
+
+.container {
+  max-width: 100%; /* Full-width layout */
+}
+
+.collection-cards-wrapper {
   display: flex;
   flex-wrap: wrap;
 }
@@ -69,7 +81,8 @@
   width: 50%;
   background-size: cover;
   background-position: center;
-  height: auto; /* Ajusta a altura conforme a imagem de fundo */
+  height: auto;
+  min-height: 300px; /* Define uma altura mínima para o card */
 }
 
 .collection-link {

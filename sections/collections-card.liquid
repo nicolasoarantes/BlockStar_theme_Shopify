@@ -39,7 +39,7 @@
   {% for block in section.blocks %}
     {% assign collection = collections[block.settings.collection] %}
     {% if collection and collection.featured_image %}
-      <div class="collection-card" style="background-image: url('{{ collection.featured_image | image_url: 'master' }}');">
+      <div class="collection-card" style="background-image: url('{{ collection.featured_image.src }}');">
         <a href="{{ collection.url }}" class="collection-link">
           <div class="collection-overlay">
             <div class="collection-info">
@@ -62,8 +62,8 @@
 
 .collection-card {
   position: relative;
-  width: 50%; /* 50% da largura para cada card */
-  height: 300px; /* Ajuste conforme necessário */
+  width: 50%;
+  height: 300px;
   background-size: cover;
   background-position: center;
   transition: transform 0.3s ease;

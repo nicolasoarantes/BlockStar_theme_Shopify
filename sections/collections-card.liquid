@@ -46,8 +46,7 @@
       {% for block in section.blocks %}
         {% assign collection = collections[block.settings.collection] %}
         {% if collection %}
-          <div class="collection-card" 
-               style="background-image: url('{{ block.settings.background_image | image_url: 'master' }}');">
+          <div class="collection-card" style="background-image: url('{{ block.settings.background_image | image_url: 'master' }}');">
             <a href="{{ collection.url }}" class="collection-link">
               <div class="collection-overlay">
                 <div class="collection-info">
@@ -57,11 +56,6 @@
               </div>
             </a>
           </div>
-        {% else %}
-          <div class="collection-card">
-            <!-- Mensagem de erro, caso a coleção não seja encontrada -->
-            <p>Por favor, selecione uma coleção para este card.</p>
-          </div>
         {% endif %}
       {% endfor %}
     </div>
@@ -70,11 +64,11 @@
 
 <style>
 .collection-cards-section {
-  padding: 20px 0; /* Ajuste de padding para espaçamento superior e inferior */
+  padding: 0;
 }
 
 .container {
-  max-width: 100%; /* Full-width layout */
+  max-width: 100%;
 }
 
 .collection-cards-wrapper {
@@ -87,8 +81,7 @@
   width: 50%;
   background-size: cover;
   background-position: center;
-  min-height: 300px; /* Define uma altura mínima para o card */
-  margin-bottom: 20px; /* Espaço entre os cards para evitar que fiquem grudados */
+  min-height: 400px; /* Define uma altura fixa para garantir espaço */
 }
 
 .collection-link {

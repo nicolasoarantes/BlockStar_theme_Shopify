@@ -39,7 +39,7 @@
   {% for block in section.blocks %}
     {% assign collection = collections[block.settings.collection] %}
     {% if collection and collection.featured_image %}
-      <div class="collection-card" style="background-image: url('{{ collection.featured_image.src | image_url: 'master' }}');">
+      <div class="collection-card" style="background-image: url('{{ collection.featured_image | image_url: 'master' }}');">
         <a href="{{ collection.url }}" class="collection-link">
           <div class="collection-overlay">
             <div class="collection-info">

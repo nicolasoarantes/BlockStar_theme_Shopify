@@ -107,31 +107,6 @@
         "padding_bottom": 0
       }
     },
-    "collections_card_YkAMWE": {
-      "type": "collections-card",
-      "blocks": {
-        "collection_card_HKBU7J": {
-          "type": "collection_card",
-          "settings": {
-            "collection": "calcas",
-            "button_text": "SHOP NOW"
-          }
-        },
-        "collection_card_BbWJmg": {
-          "type": "collection_card",
-          "settings": {
-            "collection": "moletom",
-            "button_text": "SHOP NOW"
-          }
-        }
-      },
-      "block_order": [
-        "collection_card_HKBU7J",
-        "collection_card_BbWJmg"
-      ],
-      "settings": {
-      }
-    },
     "image_banner_mGcx3m": {
       "type": "image-banner",
       "blocks": {
@@ -167,13 +142,46 @@
         "stack_images_on_mobile": true,
         "show_text_below": true
       }
+    },
+    "collection_list_FjRGHg": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_TNnABJ": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "moletom"
+          }
+        },
+        "featured_collection_4LRexk": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "calcas"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_TNnABJ",
+        "featured_collection_4LRexk"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 2,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "image_banner",
     "featured_collection",
     "instant_4xt_tyxxea4_i5is_mu_MTApEk",
-    "collections_card_YkAMWE",
-    "image_banner_mGcx3m"
+    "image_banner_mGcx3m",
+    "collection_list_FjRGHg"
   ]
 }

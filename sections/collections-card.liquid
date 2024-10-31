@@ -13,6 +13,11 @@
           "label": "Collection"
         },
         {
+          "type": "image_picker",
+          "id": "background_image",
+          "label": "Background Image"
+        },
+        {
           "type": "text",
           "id": "button_text",
           "label": "Button Text",
@@ -39,7 +44,7 @@
   {% for block in section.blocks %}
     {% assign collection = collections[block.settings.collection] %}
     {% if collection %}
-      <div class="collection-card" style="background-image: url('{{ collection.image | image_url: 'master' }}');">
+      <div class="collection-card" style="background-image: url('{{ block.settings.background_image | image_url: 'master' }}');">
         <a href="{{ collection.url }}" class="collection-link">
           <div class="collection-overlay">
             <div class="collection-info">
@@ -64,6 +69,7 @@
   width: 50%;
   background-size: cover;
   background-position: center;
+  height: 100%; /* Ajusta a altura conforme a imagem */
 }
 
 .collection-link {

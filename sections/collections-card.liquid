@@ -1,71 +1,79 @@
-{{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
-{{ 'component-card.css' | asset_url | stylesheet_tag }}
-{{ 'component-slider.css' | asset_url | stylesheet_tag }}
-
-{%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
-
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
+{% schema %}
+{
+  "name": "Collection Cards",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "collection_card",
+      "name": "Collection Card",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "SHOP NOW"
+        }
+      ]
     }
-  }
-{%- endstyle -%}
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "collection_card"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
 
-<div class="color-{{ section.settings.color_scheme }} gradient">
-  <div class="collection-list-wrapper page-width isolate section-{{ section.id }}-padding">
-    {%- unless section.settings.title == blank -%}
-      <div class="title-wrapper-with-link">
-        <h2 id="SectionHeading-{{ section.id }}" class="collection-list-title {{ section.settings.heading_size }}">
-          {{ section.settings.title }}
-        </h2>
+<div class="collection-cards-section">
+  {% for block in section.blocks %}
+    {% assign collection = collections[block.settings.collection] %}
+    {% if collection %}
+      <div class="collection-card">
+        <a href="{{ collection.url }}" class="collection-link">
+          <img src="{{ collection.image | image_url: 'master' }}" alt="{{ collection.title }}" class="collection-image" width="{{ collection.image.width }}" height="{{ collection.image.height }}" />
+          <div class="collection-overlay">
+            <div class="collection-info">
+              <h2 class="collection-title">{{ collection.title }}</h2>
+              <button class="collection-button">{{ block.settings.button_text }}</button>
+            </div>
+          </div>
+        </a>
       </div>
-    {%- endunless -%}
-
-    <slider-component class="slider-mobile-gutter">
-      <ul
-        class="collection-list contains-card grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
-        id="Slider-{{ section.id }}"
-        role="list"
-      >
-        {%- for block in section.blocks -%}
-          {%- assign collection = collections[block.settings.collection] -%}
-          <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="collection-list__item grid__item">
-            {%- if collection and collection.image -%}
-              <a href="{{ collection.url }}" class="collection-link" style="background-image: url('{{ collection.image | image_url: 'master' }}');">
-                <div class="collection-overlay">
-                  <div class="collection-info">
-                    <h2 class="collection-title">{{ collection.title }}</h2>
-                    <button class="collection-button">{{ section.settings.button_text }}</button>
-                  </div>
-                </div>
-              </a>
-            {%- endif -%}
-          </li>
-        {%- endfor -%}
-      </ul>
-    </slider-component>
-  </div>
+    {% endif %}
+  {% endfor %}
 </div>
 
 <style>
-.collection-list-wrapper {
+.collection-cards-section {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+}
+
+.collection-card {
+  position: relative;
+  width: 50%;
 }
 
 .collection-link {
   display: block;
-  background-size: cover;
-  background-position: center;
   position: relative;
+}
+
+.collection-image {
+  display: block;
   width: 100%;
-  height: 300px;
+  height: auto;
 }
 
 .collection-overlay {
@@ -76,25 +84,38 @@
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
   display: flex;
+  justify-content: space-between;
   align-items: flex-end;
-  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.collection-link:hover .collection-overlay {
+  opacity: 1;
 }
 
 .collection-info {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
+  padding: 15px;
   color: #ffffff;
 }
 
 .collection-title {
-  font-size: 1.2em;
+  font-size: 1.5em;
+  margin: 0;
 }
 
 .collection-button {
   background-color: #ffffff;
   color: #000000;
-  padding: 8px 12px;
+  border: none;
+  padding: 10px 15px;
   cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.collection-button:hover {
+  background-color: #000000;
+  color: #ffffff;
 }
 </style>

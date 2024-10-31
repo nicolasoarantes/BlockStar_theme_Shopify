@@ -150,6 +150,7 @@
           "type": "collection_card",
           "settings": {
             "collection": "calcas",
+            "background_image": "shopify://shop_images/Mask_group_700fa823-a01b-45ef-a6a1-f9a1c2fcd62b.png",
             "button_text": "SHOP NOW"
           }
         },
@@ -157,6 +158,7 @@
           "type": "collection_card",
           "settings": {
             "collection": "moletom",
+            "background_image": "shopify://shop_images/Mask_group.png",
             "button_text": "SHOP NOW"
           }
         }

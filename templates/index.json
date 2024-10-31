@@ -89,37 +89,22 @@
         "padding_bottom": 36
       }
     },
-    "collection_list_iXr74X": {
-      "type": "collection-list",
-      "blocks": {
-        "featured_collection_p4rnar": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "moletom"
-          }
-        },
-        "featured_collection_DrrFYm": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "calcas"
-          }
-        }
-      },
-      "block_order": [
-        "featured_collection_p4rnar",
-        "featured_collection_DrrFYm"
-      ],
+    "instant_4xt_tyxxea4_i5is_mu_MTApEk": {
+      "type": "instant-4xtTYXXEA4I5isMu",
       "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_ratio": "adapt",
-        "columns_desktop": 2,
-        "color_scheme": "",
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "image_FNhZUns03ojeWUXc": "shopify://shop_images/Mask_group.png",
+        "url_FNhZUns03ojeWUXc": "shopify://collections/moletom",
+        "collection_W7ozWco18QJUopRn": "moletom",
+        "url_W7ozWco18QJUopRn": "",
+        "url_jEXUI6J4F4NDt0wS": "",
+        "text_K3qmBl3bdKUdZXhS": "<p>SHOP NOW</p>",
+        "image_bcpP1yFWQNNmgwoF": "shopify://shop_images/Mask_group_700fa823-a01b-45ef-a6a1-f9a1c2fcd62b.png",
+        "collection_IvFdpjH7PK3LmqM5": "calcas",
+        "url_IvFdpjH7PK3LmqM5": "",
+        "url_gTRu6oEzJUIWgOp1": "",
+        "text_h6maAoP40otcUvRo": "<p>SHOP NOW</p>",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "image_banner_mGcx3m": {
@@ -162,7 +147,7 @@
   "order": [
     "image_banner",
     "featured_collection",
-    "collection_list_iXr74X",
+    "instant_4xt_tyxxea4_i5is_mu_MTApEk",
     "image_banner_mGcx3m"
   ]
 }

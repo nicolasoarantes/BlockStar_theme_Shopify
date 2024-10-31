@@ -42,10 +42,8 @@
       <div class="collection-card" style="background-image: url('{{ collection.image | image_url: 'master' }}');">
         <a href="{{ collection.url }}" class="collection-link">
           <div class="collection-overlay">
-            <div class="collection-info">
-              <h2 class="collection-title">{{ collection.title }}</h2>
-              <button class="collection-button">{{ block.settings.button_text }}</button>
-            </div>
+            <h2 class="collection-title">{{ collection.title }}</h2>
+            <button class="collection-button">{{ block.settings.button_text }}</button>
           </div>
         </a>
       </div>
@@ -63,13 +61,11 @@
 .collection-card {
   position: relative;
   width: calc(50% - 10px); /* Espaçamento lateral */
+  height: 300px; /* Altura para exibir a imagem de fundo */
   background-size: cover;
   background-position: center;
-  height: 300px; /* Altura para exibir a imagem de fundo */
-  display: flex;
-  align-items: flex-end;
-  overflow: hidden;
   border-radius: 10px; /* Bordas arredondadas para um visual mais agradável */
+  overflow: hidden;
 }
 
 .collection-link {
@@ -81,9 +77,11 @@
 }
 
 .collection-overlay {
-  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  bottom: 0;
   width: 100%;
   padding: 15px;
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: space-between;
   align-items: center;

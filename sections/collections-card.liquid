@@ -17,6 +17,11 @@
           "id": "button_text",
           "label": "Button Text",
           "default": "SHOP NOW"
+        },
+        {
+          "type": "image_picker",
+          "id": "background_image",
+          "label": "Background Image"
         }
       ]
     }
@@ -41,7 +46,11 @@
     {% if collection %}
       <div class="collection-card">
         <a href="{{ collection.url }}" class="collection-link">
-          <img src="{{ collection.image | image_url: 'master' }}" alt="{{ collection.title }}" class="collection-image" width="{{ collection.image.width }}" height="{{ collection.image.height }}" />
+          {% if block.settings.background_image %}
+            <img src="{{ block.settings.background_image | image_url: 'master' }}" alt="{{ collection.title }}" class="collection-image" width="600" height="400" />
+          {% else %}
+            <img src="{{ collection.image | image_url: 'master' }}" alt="{{ collection.title }}" class="collection-image" width="600" height="400" />
+          {% endif %}
           <div class="collection-overlay">
             <div class="collection-info">
               <h2 class="collection-title">{{ collection.title }}</h2>

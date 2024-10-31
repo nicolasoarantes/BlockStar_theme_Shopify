@@ -142,12 +142,38 @@
         "stack_images_on_mobile": true,
         "show_text_below": true
       }
+    },
+    "collections_card_E7nfEM": {
+      "type": "collections-card",
+      "blocks": {
+        "collection_card_eKnmUT": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "calcas",
+            "button_text": "SHOP NOW"
+          }
+        },
+        "collection_card_Tng4zd": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "moletom",
+            "button_text": "SHOP NOW"
+          }
+        }
+      },
+      "block_order": [
+        "collection_card_eKnmUT",
+        "collection_card_Tng4zd"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
     "image_banner",
     "featured_collection",
     "instant_4xt_tyxxea4_i5is_mu_MTApEk",
-    "image_banner_mGcx3m"
+    "image_banner_mGcx3m",
+    "collections_card_E7nfEM"
   ]
 }

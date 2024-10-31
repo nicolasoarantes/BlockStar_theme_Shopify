@@ -1,0 +1,121 @@
+{% schema %}
+{
+  "name": "Collection Cards",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "collection_card",
+      "name": "Collection Card",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "SHOP NOW"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "collection_card"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<div class="collection-cards-section">
+  {% for block in section.blocks %}
+    {% assign collection = collections[block.settings.collection] %}
+    {% if collection %}
+      <div class="collection-card">
+        <a href="{{ collection.url }}" class="collection-link">
+          <img src="{{ collection.image | image_url: 'master' }}" alt="{{ collection.title }}" class="collection-image" width="{{ collection.image.width }}" height="{{ collection.image.height }}" />
+          <div class="collection-overlay">
+            <div class="collection-info">
+              <h2 class="collection-title">{{ collection.title }}</h2>
+              <button class="collection-button">{{ block.settings.button_text }}</button>
+            </div>
+          </div>
+        </a>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<style>
+.collection-cards-section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.collection-card {
+  position: relative;
+  width: 50%;
+}
+
+.collection-link {
+  display: block;
+  position: relative;
+}
+
+.collection-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.collection-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.collection-link:hover .collection-overlay {
+  opacity: 1;
+}
+
+.collection-info {
+  padding: 15px;
+  color: #ffffff;
+}
+
+.collection-title {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.collection-button {
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.collection-button:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+</style>

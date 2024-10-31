@@ -65,48 +65,33 @@
         "padding_bottom": 28
       }
     },
-    "collage_z9NgWC": {
-      "type": "collage",
+    "17302025777cae346f": {
+      "type": "apps",
       "blocks": {
-        "image_NpaQH7": {
-          "type": "image",
+        "nitro_lookbook_lookbook_block_6RnDWb": {
+          "type": "shopify://apps/nitro-lookbook/blocks/lookbook-block/cc1f7d0a-9bac-40f1-a181-859d84a3417f",
           "settings": {
-          }
-        },
-        "product_xiYwak": {
-          "type": "product",
-          "settings": {
-            "product": "",
-            "second_image": false
-          }
-        },
-        "collection_MDTDL6": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
+            "lookbook_id": "2a83433f-1c3e-46cd-b4c0-69dcb6d80cb2",
+            "heading": "",
+            "sub_heading": "",
+            "heading_font_size": "1.2",
+            "heading_alignment": "center",
+            "padding_top": 64,
+            "padding_bottom": 64
           }
         }
       },
       "block_order": [
-        "image_NpaQH7",
-        "product_xiYwak",
-        "collection_MDTDL6"
+        "nitro_lookbook_lookbook_block_6RnDWb"
       ],
       "settings": {
-        "heading": "Colagem multimídia",
-        "heading_size": "h1",
-        "desktop_layout": "left",
-        "mobile_layout": "column",
-        "card_styles": "product-card-wrapper",
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "include_margins": true
       }
     }
   },
   "order": [
     "image_banner_c7kWQ8",
     "main",
-    "collage_z9NgWC"
+    "17302025777cae346f"
   ]
 }

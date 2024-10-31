@@ -1,19 +1,7 @@
-{{ 'component-card.css' | asset_url | stylesheet_tag }}
-{{ 'component-price.css' | asset_url | stylesheet_tag }}
-{{ 'component-slider.css' | asset_url | stylesheet_tag }}
-{{ 'template-collection.css' | asset_url | stylesheet_tag }}
-
 {% schema %}
 {
   "name": "Collection Cards",
-  "settings": [
-    {
-      "type": "inline_richtext",
-      "id": "title",
-      "label": "Section Title",
-      "default": "Featured Collections"
-    }
-  ],
+  "settings": [],
   "blocks": [
     {
       "type": "collection_card",
@@ -47,48 +35,27 @@
 }
 {% endschema %}
 
-<div class="section-collection-cards padding-section">
-  <div class="container">
-    <h2 class="section-title">{{ section.settings.title }}</h2>
-    <div class="collection-cards-wrapper grid--2-col-tablet-down">
-      {% for block in section.blocks %}
-        {% assign collection = collections[block.settings.collection] %}
-        {% if collection %}
-          <div class="collection-card">
-            <a href="{{ collection.url }}" class="collection-link">
-              {% render 'card-product',
-                card_product: collection,
-                show_vendor: false,
-                media_aspect_ratio: 'portrait',
-                image_shape: 'default',
-                show_secondary_image: false,
-                section_id: section.id
-              %}
-              <div class="collection-overlay">
-                <div class="collection-info">
-                  <h2 class="collection-title">{{ collection.title }}</h2>
-                  <button class="collection-button">{{ block.settings.button_text }}</button>
-                </div>
-              </div>
-            </a>
+<div class="collection-cards-section">
+  {% for block in section.blocks %}
+    {% assign collection = collections[block.settings.collection] %}
+    {% if collection %}
+      <div class="collection-card">
+        <a href="{{ collection.url }}" class="collection-link">
+          <img src="{{ collection.image | image_url: 'master' }}" alt="{{ collection.title }}" class="collection-image" width="{{ collection.image.width }}" height="{{ collection.image.height }}" />
+          <div class="collection-overlay">
+            <div class="collection-info">
+              <h2 class="collection-title">{{ collection.title }}</h2>
+              <button class="collection-button">{{ block.settings.button_text }}</button>
+            </div>
           </div>
-        {% endif %}
-      {% endfor %}
-    </div>
-  </div>
+        </a>
+      </div>
+    {% endif %}
+  {% endfor %}
 </div>
 
 <style>
-.section-collection-cards {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.container {
-  max-width: 100%;
-}
-
-.collection-cards-wrapper {
+.collection-cards-section {
   display: flex;
   flex-wrap: wrap;
 }
@@ -96,15 +63,17 @@
 .collection-card {
   position: relative;
   width: 50%;
-  min-height: 300px;
 }
 
 .collection-link {
   display: block;
   position: relative;
+}
+
+.collection-image {
+  display: block;
   width: 100%;
-  height: 100%;
-  text-decoration: none;
+  height: auto;
 }
 
 .collection-overlay {
@@ -126,12 +95,8 @@
 }
 
 .collection-info {
-  display: flex;
-  align-items: center;
-  color: #ffffff;
-  width: 100%;
-  justify-content: space-between;
   padding: 15px;
+  color: #ffffff;
 }
 
 .collection-title {

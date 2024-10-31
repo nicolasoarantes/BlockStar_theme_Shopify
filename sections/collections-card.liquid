@@ -1,121 +1,83 @@
-{% schema %}
-{
-  "name": "Collection Cards",
-  "settings": [],
-  "blocks": [
-    {
-      "type": "collection_card",
-      "name": "Collection Card",
-      "settings": [
-        {
-          "type": "collection",
-          "id": "collection",
-          "label": "Collection"
-        },
-        {
-          "type": "text",
-          "id": "button_text",
-          "label": "Button Text",
-          "default": "SHOP NOW"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Default",
-      "category": "Custom",
-      "blocks": [
-        {
-          "type": "collection_card"
-        }
-      ]
-    }
-  ]
-}
-{% endschema %}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{{ 'template-collection.css' | asset_url | stylesheet_tag }}
 
-<div class="collection-cards-section">
-  {% for block in section.blocks %}
-    {% assign collection = collections[block.settings.collection] %}
-    {% if collection %}
-      <div class="collection-card">
-        <a href="{{ collection.url }}" class="collection-link">
-          <img src="{{ collection.image | image_url: 'master' }}" alt="{{ collection.title }}" class="collection-image" width="{{ collection.image.width }}" height="{{ collection.image.height }}" />
-          <div class="collection-overlay">
-            <div class="collection-info">
-              <h2 class="collection-title">{{ collection.title }}</h2>
-              <button class="collection-button">{{ block.settings.button_text }}</button>
-            </div>
-          </div>
-        </a>
-      </div>
-    {% endif %}
-  {% endfor %}
+{%- if section.settings.image_shape == 'blob' %}
+  {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
+
+{%- unless section.settings.quick_add == 'none' -%}
+  {{ 'quick-add.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+{%- endunless -%}
+
+{%- if section.settings.quick_add == 'standard' -%}
+  <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+{%- if section.settings.quick_add == 'bulk' -%}
+  <script src="{{ 'quick-add-bulk.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'price-per-item.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'quick-order-list.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+<div class="color-{{ section.settings.color_scheme }} isolate gradient">
+  <div
+    class="collection{% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %} section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %}"
+    id="collection-{{ section.id }}"
+    data-id="{{ section.id }}"
+  >
+    <div class="collection__title title-wrapper title-wrapper--no-top-margin page-width">
+      {%- if section.settings.title != blank -%}
+        <h2 class="title inline-richtext {{ section.settings.heading_size }}">
+          {{ section.settings.title }}
+        </h2>
+      {%- endif -%}
+      {%- if section.settings.description != blank
+        or section.settings.show_description
+        and section.settings.collection.description != empty
+      -%}
+        <div class="collection__description {{ section.settings.description_style }} rte">
+          {%- if section.settings.show_description -%}
+            {{ section.settings.collection.description }}
+          {%- else -%}
+            {{ section.settings.description -}}
+          {%- endif %}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <slider-component class="slider-mobile-gutter">
+      <ul
+        id="Slider-{{ section.id }}"
+        data-id="{{ section.id }}"
+        class="grid product-grid contains-card contains-card--product grid--{{ section.settings.columns_desktop }}-col-desktop"
+        role="list"
+        aria-label="{{ 'general.slider.name' | t }}"
+      >
+        {% assign skip_card_product_styles = false %}
+        {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
+          <li
+            id="Slide-{{ section.id }}-{{ forloop.index }}"
+            class="grid__item"
+          >
+            {% render 'card-product',
+              card_product: product,
+              media_aspect_ratio: section.settings.image_ratio,
+              image_shape: section.settings.image_shape,
+              show_secondary_image: section.settings.show_secondary_image,
+              show_vendor: section.settings.show_vendor,
+              show_rating: section.settings.show_rating,
+              skip_styles: skip_card_product_styles,
+              section_id: section.id,
+              quick_add: section.settings.quick_add
+            %}
+          </li>
+          {%- assign skip_card_product_styles = true -%}
+        {%- endfor -%}
+      </ul>
+    </slider-component>
+  </div>
 </div>
-
-<style>
-.collection-cards-section {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.collection-card {
-  position: relative;
-  width: 50%;
-}
-
-.collection-link {
-  display: block;
-  position: relative;
-}
-
-.collection-image {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.collection-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.collection-link:hover .collection-overlay {
-  opacity: 1;
-}
-
-.collection-info {
-  padding: 15px;
-  color: #ffffff;
-}
-
-.collection-title {
-  font-size: 1.5em;
-  margin: 0;
-}
-
-.collection-button {
-  background-color: #ffffff;
-  color: #000000;
-  border: none;
-  padding: 10px 15px;
-  cursor: pointer;
-  font-size: 1em;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.collection-button:hover {
-  background-color: #000000;
-  color: #ffffff;
-}
-</style>

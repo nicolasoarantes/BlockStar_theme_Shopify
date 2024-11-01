@@ -9,54 +9,6 @@
  */
 {
   "sections": {
-    "image_banner_c7kWQ8": {
-      "type": "image-banner",
-      "blocks": {
-        "text_WeXXbz": {
-          "type": "text",
-          "settings": {
-            "text": "<strong>BLOCKK ‘2024</strong>",
-            "text_style": "body"
-          }
-        },
-        "heading_WACqYg": {
-          "type": "heading",
-          "settings": {
-            "heading": "NEW DROP FROM BLOCKO",
-            "heading_size": "h1"
-          }
-        },
-        "buttons_wxMHMe": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "COMPRAR",
-            "button_link_1": "",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "text_WeXXbz",
-        "heading_WACqYg",
-        "buttons_wxMHMe"
-      ],
-      "settings": {
-        "image": "shopify://shop_images/Sem_titulo.png",
-        "image_overlay_opacity": 0,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-4",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
-      }
-    },
     "main": {
       "type": "main-page",
       "disabled": true,
@@ -90,7 +42,6 @@
     }
   },
   "order": [
-    "image_banner_c7kWQ8",
     "main",
     "17302025777cae346f"
   ]

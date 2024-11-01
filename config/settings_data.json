@@ -156,6 +156,12 @@
         "disabled": true,
         "settings": {
         }
+      },
+      "13974891295773085016": {
+        "type": "shopify://apps/ultima-scroll-to-top/blocks/app-embed/6760385e-188f-4212-b4aa-30f52961da03",
+        "disabled": false,
+        "settings": {
+        }
       }
     },
     "color_schemes": {

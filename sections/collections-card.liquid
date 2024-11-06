@@ -17,7 +17,7 @@
     <div class="hover-section__column" style="background-image: url('https://cdn.shopify.com/s/files/1/0706/8313/2183/files/Mask_group.png?v=1730901040');">
       <div class="hover-section__overlay">
         <div class="hover-section__content">
-          <h2>TOP</h2>
+          <h2 class="hover-section__title">TOP</h2>
           <a href="https://realblockkstar.com/collections/top" class="hover-section__button">BUY NOW</a>
         </div>
       </div>
@@ -27,7 +27,7 @@
     <div class="hover-section__column" style="background-image: url('https://cdn.shopify.com/s/files/1/0706/8313/2183/files/Mask_group.jpg?v=1730902120');">
       <div class="hover-section__overlay">
         <div class="hover-section__content">
-          <h2>BOTTOM</h2>
+          <h2 class="hover-section__title">BOTTOM</h2>
           <a href="https://realblockkstar.com/collections/bottom" class="hover-section__button">BUY NOW</a>
         </div>
       </div>
@@ -74,7 +74,14 @@
     opacity: 1;
   }
 
-  .hover-section__content h2 {
+  .hover-section__content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .hover-section__title {
     color: #fff;
     font-size: 2rem;
     margin: 0;

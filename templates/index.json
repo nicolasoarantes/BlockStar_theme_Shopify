@@ -89,6 +89,39 @@
         "padding_bottom": 36
       }
     },
+    "collection_list_FjRGHg": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_TNnABJ": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "top"
+          }
+        },
+        "featured_collection_4LRexk": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "bottom"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_TNnABJ",
+        "featured_collection_4LRexk"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "image_banner_mGcx3m": {
       "type": "image-banner",
       "blocks": {
@@ -124,45 +157,12 @@
         "stack_images_on_mobile": true,
         "show_text_below": true
       }
-    },
-    "collection_list_FjRGHg": {
-      "type": "collection-list",
-      "blocks": {
-        "featured_collection_TNnABJ": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "moletom"
-          }
-        },
-        "featured_collection_4LRexk": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "calcas"
-          }
-        }
-      },
-      "block_order": [
-        "featured_collection_TNnABJ",
-        "featured_collection_4LRexk"
-      ],
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_ratio": "adapt",
-        "columns_desktop": 2,
-        "color_scheme": "",
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
     "image_banner",
     "featured_collection",
-    "image_banner_mGcx3m",
-    "collection_list_FjRGHg"
+    "collection_list_FjRGHg",
+    "image_banner_mGcx3m"
   ]
 }

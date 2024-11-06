@@ -1,10 +1,10 @@
 {% schema %}
   {
-    "name": "Image Hover Section",
+    "name": "Seção TOP/BOTTOM",
     "settings": [],
     "presets": [
       {
-        "name": "Image Hover Section",
+        "name": "Seção TOP/BOTTOM",
         "category": "Custom"
       }
     ]
@@ -14,8 +14,7 @@
 <section class="hover-section">
   <div class="hover-section__container">
     <!-- First Column (TOP) -->
-    <a href="https://realblockkstar.com/collections/top" class="hover-section__column">
-      <div class="hover-section__background" style="background-image: url('https://cdn.shopify.com/s/files/1/0706/8313/2183/files/Mask_group.png?v=1730901040');"></div>
+    <a href="https://realblockkstar.com/collections/top" class="hover-section__column" style="background-image: url('https://cdn.shopify.com/s/files/1/0706/8313/2183/files/Mask_group.png?v=1730901040');">
       <div class="hover-section__overlay">
         <div class="hover-section__content">
           <h2 class="hover-section__title">TOP</h2>
@@ -25,8 +24,7 @@
     </a>
 
     <!-- Second Column (BOTTOM) -->
-    <a href="https://realblockkstar.com/collections/bottom" class="hover-section__column">
-      <div class="hover-section__background" style="background-image: url('https://cdn.shopify.com/s/files/1/0706/8313/2183/files/Mask_group.jpg?v=1730902120');"></div>
+    <a href="https://realblockkstar.com/collections/bottom" class="hover-section__column" style="background-image: url('https://cdn.shopify.com/s/files/1/0706/8313/2183/files/Mask_group.jpg?v=1730902120');">
       <div class="hover-section__overlay">
         <div class="hover-section__content">
           <h2 class="hover-section__title">BOTTOM</h2>
@@ -52,28 +50,19 @@
   .hover-section__column {
     width: 50%;
     height: 100vh;
+    background-size: cover;
+    background-position: center;
     position: relative;
     display: flex;
     align-items: flex-end;
     justify-content: center;
     text-decoration: none;
     overflow: hidden;
+    transition: transform 0.3s ease;
   }
 
-  .hover-section__background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-size: cover;
-    background-position: center;
-    transition: transform 0.5s ease; /* Smoother zoom */
-    z-index: 1; /* Ensure background is beneath overlay */
-  }
-
-  .hover-section__column:hover .hover-section__background {
-    transform: scale(1.08);
+  .hover-section__column:hover {
+    transform: scale(1.05);
   }
 
   .hover-section__overlay {
@@ -82,14 +71,13 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.7); /* Darker overlay */
+    background: rgba(0, 0, 0, 0.5);
     opacity: 0;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
     padding: 20px;
     transition: opacity 0.3s ease;
-    z-index: 2; /* Overlay is above background */
   }
 
   .hover-section__column:hover .hover-section__overlay {
@@ -141,12 +129,12 @@
     }
 
     .hover-section__title {
-      font-size: 30px;
+      font-size: 30px; /* Adjusted for smaller screens */
       line-height: 40px;
     }
 
     .hover-section__button {
-      font-size: 18px;
+      font-size: 18px; /* Adjusted for smaller screens */
       line-height: 24px;
       padding: 8px 16px;
     }

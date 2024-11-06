@@ -1,128 +1,118 @@
 {% schema %}
-{
-  "name": "Collection Cards",
-  "settings": [],
-  "blocks": [
-    {
-      "type": "collection_card",
-      "name": "Collection Card",
-      "settings": [
-        {
-          "type": "collection",
-          "id": "collection",
-          "label": "Collection"
-        },
-        {
-          "type": "text",
-          "id": "button_text",
-          "label": "Button Text",
-          "default": "SHOP NOW"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Default",
-      "category": "Custom",
-      "blocks": [
-        {
-          "type": "collection_card"
-        }
-      ]
-    }
-  ]
-}
+  {
+    "name": "Seção TOP/BOTTOM",
+    "settings": [],
+    "presets": [
+      {
+        "name": "Seção TOP/BOTTOM",
+        "category": "Custom"
+      }
+    ]
+  }
 {% endschema %}
 
-<div class="collection-cards-section">
-  {% for block in section.blocks %}
-    {% assign collection = collections[block.settings.collection] %}
-    {% if collection and collection.image %}
-      <div class="collection-card" style="background-image: url('{{ collection.image | image_url: 'master' }}');">
-        <a href="{{ collection.url }}" class="collection-link">
-          <div class="collection-overlay">
-            <div class="collection-info">
-              <h2 class="collection-title">{{ collection.title }}</h2>
-              <button class="collection-button">{{ block.settings.button_text }}</button>
-            </div>
-          </div>
-        </a>
+<section class="hover-section">
+  <div class="hover-section__container">
+    <!-- First Column (TOP) -->
+    <div class="hover-section__column" style="background-image: url('https://cdn.shopify.com/s/files/1/0706/8313/2183/files/Mask_group.png?v=1730901040');">
+      <div class="hover-section__overlay">
+        <div class="hover-section__content">
+          <h2 class="hover-section__title">TOP</h2>
+          <a href="https://realblockkstar.com/collections/top" class="hover-section__button">SHOP NOW</a>
+        </div>
       </div>
-    {% endif %}
-  {% endfor %}
-</div>
+    </div>
+
+    <!-- Second Column (BOTTOM) -->
+    <div class="hover-section__column" style="background-image: url('https://cdn.shopify.com/s/files/1/0706/8313/2183/files/Mask_group.jpg?v=1730902120');">
+      <div class="hover-section__overlay">
+        <div class="hover-section__content">
+          <h2 class="hover-section__title">BOTTOM</h2>
+          <a href="https://realblockkstar.com/collections/bottom" class="hover-section__button">SHOP NOW</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <style>
-.collection-cards-section {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-}
+  .hover-section {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
 
-.collection-card {
-  position: relative;
-  width: 50%;
-  height: 300px;
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.3s ease;
-}
+  .hover-section__container {
+    display: flex;
+    width: 100%;
+  }
 
-.collection-card:hover {
-  transform: scale(1.05);
-}
+  .hover-section__column {
+    width: 50%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
 
-.collection-link {
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
+  .hover-section__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 20px;
+    transition: opacity 0.3s ease;
+  }
 
-.collection-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
+  .hover-section__column:hover .hover-section__overlay {
+    opacity: 1;
+  }
 
-.collection-card:hover .collection-overlay {
-  opacity: 1;
-}
+  .hover-section__content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+  }
 
-.collection-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 80%;
-  color: #ffffff;
-}
+  .hover-section__title {
+    color: #fff;
+    font-size: 2rem;
+    margin: 0;
+    font-family: Nunito Sans;
+    font-size: 40.91px;
+    font-weight: 400;
+    line-height: 55.8px;
+    letter-spacing: 0.1em;
+    text-align: left;
 
-.collection-title {
-  font-size: 1.5em;
-  margin: 0;
-}
+  }
 
-.collection-button {
-  background-color: #ffffff;
-  color: #000000;
-  border: none;
-  padding: 10px 15px;
-  cursor: pointer;
-  font-size: 1em;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
+  .hover-section__button {
+    background-color: black;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+  }
 
-.collection-button:hover {
-  background-color: #000000;
-  color: #ffffff;
-}
+  .hover-section__button:hover {
+    background-color: #fff;
+    color: #000;
+  }
+
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    .hover-section__column {
+      width: 100%;
+      height: 50vh;
+    }
+  }
 </style>

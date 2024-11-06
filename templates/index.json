@@ -89,24 +89,6 @@
         "padding_bottom": 36
       }
     },
-    "instant_4xt_tyxxea4_i5is_mu_KxBqwa": {
-      "type": "instant-4xtTYXXEA4I5isMu",
-      "settings": {
-        "image_FNhZUns03ojeWUXc": "shopify://shop_images/Mask_group.png",
-        "url_FNhZUns03ojeWUXc": "",
-        "collection_W7ozWco18QJUopRn": "top",
-        "url_W7ozWco18QJUopRn": "shopify://collections/top",
-        "url_jEXUI6J4F4NDt0wS": "shopify://collections/top",
-        "text_K3qmBl3bdKUdZXhS": "<p>Buy now!</p>",
-        "image_bcpP1yFWQNNmgwoF": "shopify://shop_images/Mask_group.jpg",
-        "collection_IvFdpjH7PK3LmqM5": "bottom",
-        "url_IvFdpjH7PK3LmqM5": "shopify://collections/bottom",
-        "url_gTRu6oEzJUIWgOp1": "shopify://collections/bottom",
-        "text_h6maAoP40otcUvRo": "<p>Buy now!</p>",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
     "image_banner_mGcx3m": {
       "type": "image-banner",
       "blocks": {
@@ -142,12 +124,17 @@
         "stack_images_on_mobile": true,
         "show_text_below": true
       }
+    },
+    "collections_card_hJzQJB": {
+      "type": "collections-card",
+      "settings": {
+      }
     }
   },
   "order": [
     "image_banner",
     "featured_collection",
-    "instant_4xt_tyxxea4_i5is_mu_KxBqwa",
+    "collections_card_hJzQJB",
     "image_banner_mGcx3m"
   ]
 }

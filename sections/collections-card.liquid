@@ -14,24 +14,24 @@
 <section class="hover-section">
   <div class="hover-section__container">
     <!-- First Column (TOP) -->
-    <a href="https://realblockkstar.com/collections/top" class="hover-section__column" style="background-image: url('https://cdn.shopify.com/s/files/1/0706/8313/2183/files/Mask_group.png?v=1730901040');">
+    <div class="hover-section__column" style="background-image: url('https://cdn.shopify.com/s/files/1/0706/8313/2183/files/Mask_group.png?v=1730901040');">
       <div class="hover-section__overlay">
         <div class="hover-section__content">
           <h2 class="hover-section__title">TOP</h2>
-          <span class="hover-section__button">BUY NOW</span>
+          <a href="https://realblockkstar.com/collections/top" class="hover-section__button">BUY NOW</a>
         </div>
       </div>
-    </a>
+    </div>
 
     <!-- Second Column (BOTTOM) -->
-    <a href="https://realblockkstar.com/collections/bottom" class="hover-section__column" style="background-image: url('https://cdn.shopify.com/s/files/1/0706/8313/2183/files/Mask_group.jpg?v=1730902120');">
+    <div class="hover-section__column" style="background-image: url('https://cdn.shopify.com/s/files/1/0706/8313/2183/files/Mask_group.jpg?v=1730902120');">
       <div class="hover-section__overlay">
         <div class="hover-section__content">
           <h2 class="hover-section__title">BOTTOM</h2>
-          <span class="hover-section__button">BUY NOW</span>
+          <a href="https://realblockkstar.com/collections/bottom" class="hover-section__button">BUY NOW</a>
         </div>
       </div>
-    </a>
+    </div>
   </div>
 </section>
 
@@ -53,16 +53,6 @@
     background-size: cover;
     background-position: center;
     position: relative;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    text-decoration: none;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-  }
-
-  .hover-section__column:hover {
-    transform: scale(1.05);
   }
 
   .hover-section__overlay {
@@ -92,33 +82,24 @@
   }
 
   .hover-section__title {
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 40.91px;
-    font-weight: 400;
-    line-height: 55.8px;
-    letter-spacing: 0.1em;
-    text-align: left;
     color: #fff;
+    font-size: 2rem;
     margin: 0;
   }
 
   .hover-section__button {
-    font-family: 'Lato', sans-serif;
-    font-size: 25.03px;
-    font-weight: 500;
-    line-height: 30.04px;
-    letter-spacing: 0.15em;
-    text-align: left;
-    background-color: #fff;
-    color: #000;
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
     padding: 10px 20px;
     text-decoration: none;
+    font-weight: bold;
     transition: background-color 0.3s, color 0.3s;
   }
 
   .hover-section__button:hover {
-    background-color: #000;
-    color: #fff;
+    background-color: #fff;
+    color: #000;
   }
 
   /* Responsive styling */
@@ -126,30 +107,6 @@
     .hover-section__column {
       width: 100%;
       height: 50vh;
-    }
-
-    .hover-section__title {
-      font-size: 30px; /* Adjusted for smaller screens */
-      line-height: 40px;
-    }
-
-    .hover-section__button {
-      font-size: 18px; /* Adjusted for smaller screens */
-      line-height: 24px;
-      padding: 8px 16px;
-    }
-  }
-
-  @media (max-width: 400px) {
-    .hover-section__title {
-      font-size: 20px;
-      line-height: 28px;
-    }
-
-    .hover-section__button {
-      font-size: 16px;
-      line-height: 20px;
-      padding: 6px 12px;
     }
   }
 </style>

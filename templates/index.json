@@ -30,7 +30,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "COMPRAR",
-            "button_link_1": "shopify://collections/all",
+            "button_link_1": "shopify://collections/frontpage",
             "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
@@ -89,6 +89,10 @@
         "padding_bottom": 36
       }
     },
+    "collections_card_hJzQJB": {
+      "type": "collections-card",
+      "settings": {}
+    },
     "image_banner_mGcx3m": {
       "type": "image-banner",
       "blocks": {
@@ -123,11 +127,6 @@
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": true,
         "show_text_below": true
-      }
-    },
-    "collections_card_hJzQJB": {
-      "type": "collections-card",
-      "settings": {
       }
     }
   },

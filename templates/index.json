@@ -15,14 +15,14 @@
         "text_BL4FMk": {
           "type": "text",
           "settings": {
-            "text": "BLOCKK ‘2025",
+            "text": "",
             "text_style": "subtitle"
           }
         },
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "<strong>ESTRELAS DO BLOCKO</strong>",
+            "heading": "",
             "heading_size": "hxl"
           }
         },
@@ -31,7 +31,7 @@
           "settings": {
             "button_label_1": "COMPRAR",
             "button_link_1": "shopify://collections/frontpage",
-            "button_style_secondary_1": false,
+            "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",
             "button_style_secondary_2": false
@@ -44,14 +44,14 @@
         "button"
       ],
       "settings": {
-        "image": "shopify://shop_images/EXTRA.png",
+        "image": "shopify://shop_images/1920x1080.png",
         "image_overlay_opacity": 40,
         "image_height": "large",
-        "desktop_content_position": "bottom-center",
+        "desktop_content_position": "middle-center",
         "show_text_box": false,
         "desktop_content_alignment": "center",
         "color_scheme": "scheme-3",
-        "image_behavior": "none",
+        "image_behavior": "ambient",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
         "show_text_below": false

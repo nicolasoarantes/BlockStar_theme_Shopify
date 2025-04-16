@@ -15,14 +15,14 @@
         "text_BL4FMk": {
           "type": "text",
           "settings": {
-            "text": "<strong>BLOCKK ‘2024</strong>",
+            "text": "BLOCKK ‘2025",
             "text_style": "subtitle"
           }
         },
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "NEW DROP \"BLOCKO\"",
+            "heading": "<strong>ESTRELAS DO BLOCKO</strong>",
             "heading_size": "hxl"
           }
         },
@@ -44,7 +44,7 @@
         "button"
       ],
       "settings": {
-        "image": "shopify://shop_images/Sem_titulo.png",
+        "image": "shopify://shop_images/EXTRA.png",
         "image_overlay_opacity": 40,
         "image_height": "large",
         "desktop_content_position": "bottom-center",

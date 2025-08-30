@@ -59,6 +59,7 @@
     },
     "featured_collection": {
       "type": "featured-collection",
+      "disabled": true,
       "custom_css": [
         ".full-unstyled-link {font-family: \"Nunito Sans\"; font-size: 21.3px;}",
         ".price > * {font-family: \"Nunito Sans\"; font-size: 21.3px;}"
